@@ -1,0 +1,18 @@
+<%= form_with scope: @user, local: true do |form| %>
+    <p>
+      <%= form.label :Name %><br>
+      <%= form.text_field :User_name %>
+    </p>
+   
+    <p>
+      <%= form.label :Email %><br>
+      <%= form.text_field :email %>
+    </p>
+   
+    <p>
+      <%= form.submit "Sign Up"%>
+    </p>
+  <% end %>
+
+  <br/>
+<%= link_to 'Login', controller: 'articles' %>
