@@ -10,10 +10,9 @@ class UsersController < ApplicationController
 
     #POST /users - create the User action
     def create 
-        binding.pry
          @user = User.new
-         @user.email = params([:name, :email])
+         @user.email = params[:email]
          @user.save
-         redirect_to article_path(@article)
+         redirect_to articles_path(@article)
     end
 end
