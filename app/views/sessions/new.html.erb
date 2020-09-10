@@ -1,4 +1,4 @@
-<h1>Sign Up</h1>
+<h1> Login </h1>
 
 <%= form_with scope: @user, url: users_path, local: true do |form| %>
     <p>
@@ -12,9 +12,6 @@
     </p>
    
     <p>
-      <%= form.submit "Sign Up"%>
+      <%= form.submit "Login"%>
     </p>
   <% end %>
-
-  <br/>
-    <%= link_to 'Login', articles_path %>
