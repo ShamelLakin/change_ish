@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post '/sessions', to: 'sessions#create'
 
   get '/logout', to: 'sessions#destroy'
+
+  get '/auth/facebook/callback' => 'sessions#create'
  #may be POST 
   resources :users 
   resources :articles do 
