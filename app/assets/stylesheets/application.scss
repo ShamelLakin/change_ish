@@ -24,8 +24,8 @@ $black: black;
         background: $black;
 }
 body {
-        background: $black;
-        color: $white;
+        background: $white;
+        color: $black;
         font-family: 'Merriweather', sans-serif;
 }
 h1,
@@ -34,7 +34,7 @@ h2 {
 }
 p {
         font-size: 16px;
-        color: $white;
+        color: $black;
 }
 a:visited {
         color: $black;
