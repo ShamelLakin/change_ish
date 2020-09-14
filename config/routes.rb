@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  get 'home/index'
-
   get '/auth/facebook/callback' => 'sessions#create'
   
-  get '/signup', to: 'users#new'
-  post '/users', to: 'users#create'
+  get '/signup', to: 'registrations#new'
+  post '/users', to: 'registrations#create'
 
   get '/login', to: 'sessions#new'
   post '/sessions', to: 'sessions#create'
