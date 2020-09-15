@@ -6,3 +6,30 @@
 <% else %>
   <%= link_to('Log in with Facebook!', '/auth/facebook') %>
 <% end %>
+
+
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Want to see what is changing?</h1>
+        <p>Are you ready to learn about change?</p>
+        <br>
+        <p>
+            <%= button_to 'See Change', articles_path, :method => :get,  :class => "btn btn-primary btn-lg"%>
+        </p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <h3>Change is good</h3>
+            <p>We show real actions that are powerful enough to change our communities so we can live in a just and fair world our children can be proud of.
+            </p>
+        </div>
+        <div class="col-lg-6">
+            <h3>Change is everything</h3>
+            <p>Change will not come if we wait for some other person or some other time. We are the ones we've been waiting for. We are the change that we seek.
+            </p>
+        </div>
+    </div>
+</div>
