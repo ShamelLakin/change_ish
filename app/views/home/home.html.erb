@@ -15,7 +15,7 @@
         <p>Are you ready to learn about change?</p>
         <br>
         <p>
-        <% if !logged_in? %>
+        <% if logged_in? %>
             <%= button_to 'See Change', articles_path, :method => :get,  :class => "btn btn-primary btn-lg"%>
             <% else %>
             <li class='nav-item active'><%= link_to 'Login', login_path, class: 'nav-link' %></li> 

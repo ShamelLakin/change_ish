@@ -6,12 +6,16 @@ class CommentsController < ApplicationController
     # end 
 
     def create 
+        # binding.pry
         @article = Article.find(params[:article_id])
         @comment = @article.comments.create(comment_params)
-        # binding.pry
+        @comment.user=(current_user)
+        @comment.save
+       
         #create, link and save the comment
         redirect_to article_path(@article)
         #redirect to the original article object
+        # binding.pry
     end
 
     def destroy 
