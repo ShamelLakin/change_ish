@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Change • ish
 
-Things you may want to cover:
+Change • ish is a  libraWeb application written in ruby that will document change as it relates to justice reform in the United States.
 
-* Ruby version
+## Installation
 
-* System dependencies
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
-* Configuration
+```bash
+git clone
+```
 
-* Database creation
+## Usage
 
-* Database initialization
+```ruby
+import foobar
 
-* How to run the test suite
+foobar.pluralize('word') # returns 'words'
+foobar.pluralize('goose') # returns 'geese'
+foobar.singularize('phenomena') # returns 'phenomenon'
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-* Deployment instructions
+Please make sure to update tests as appropriate.
 
-* ...
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
