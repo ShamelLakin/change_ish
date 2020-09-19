@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#create'
   
-  get '/signup', to: 'registrations#new'
+  get '/signup', to: 'registrations#show'
   post '/users', to: 'registrations#create'
 
   get '/login', to: 'sessions#new'

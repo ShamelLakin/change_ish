@@ -12,6 +12,11 @@ class RegistrationsController < ApplicationController
         end 
     end 
 
+    def show
+    end 
+
+
+
     private 
     def user_params 
         params.permit(:name, :password, :email, :image)
