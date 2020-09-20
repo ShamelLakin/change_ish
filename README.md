@@ -6,20 +6,25 @@ Change • ish is a  libraWeb application written in ruby that will document cha
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+ Verify that you have a current version of Ruby installed:[ruby] (https://www.ruby-lang.org/en/downloads/) to install change•ish.
 
 ```bash
-git clone
+$ ruby -v
 ```
+If you installed Rails through Rails Installer, you already have SQLite installed.
 
-## Usage
+```bash
+$ sqlite3 --version
+```
+To install Rails, use the gem install command provided by RubyGems:
 
-```ruby
-import foobar
+```bash
+$ gem install rails
+```
+To verify that you have everything installed correctly, you should be able to run the following:
 
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+```bash
+$ rails --version
 ```
 
 ## Contributing
