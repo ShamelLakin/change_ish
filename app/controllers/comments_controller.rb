@@ -1,9 +1,9 @@
 class CommentsController < ApplicationController 
     # http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
 
-    # def show 
-    #     @comment = Article.find(params[:article_id])
-    # end 
+    def show 
+        @comment = Article.find(params[:article_id])
+    end 
 
     def create 
         # binding.pry

@@ -5,4 +5,5 @@ class Article < ApplicationRecord
     validates :title, presence: true, length: { minimum: 5 }
     validates :text, presence: true, length: {minimum: 2} 
     #article has many comments
+    scope :most_recent, -> { order(id: :desc)}
 end
