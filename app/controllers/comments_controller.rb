@@ -1,15 +1,17 @@
 class CommentsController < ApplicationController 
     # http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
+    before_action :article_finder
 
     def show 
-        @comment = Article.find(params[:article_id])
+       
     end 
 
     def create 
-        # binding.pry
-        @article = Article.find(params[:article_id])
-        @comment = @article.comments.create(comment_params)
-        @comment.user=(current_user)
+        
+       
+        #correct comment id not saving to the data base
+        @comment = @article.comments.build(comment_params)
+        @comment.user=current_user
         @comment.save
        
         #create, link and save the comment
@@ -19,7 +21,7 @@ class CommentsController < ApplicationController
     end
 
     def destroy 
-        @article = Article.find(params[:article_id])
+        
         @comment = @article.comments.find(params[:id])
         @comment.destroy
 
@@ -29,7 +31,12 @@ class CommentsController < ApplicationController
     end 
 
     private
+
+    def article_finder
+        @article = Article.find(params[:article_id])
+    end 
+    
     def comment_params 
-        params.require(:comment).permit(:commenter, :body)
+        params.require(:comment).permit(:commenter, :body, :user_id, :article_id)
     end 
 end

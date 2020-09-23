@@ -1,11 +1,4 @@
-<% if current_user %>
-  <h1><%= current_user.name %></h1>
-  <h2>Email: <%= current_user.email %></h2>
-  <h2>Facebook UID: <%= current_user.uid %></h2>
-  <img src="<%= current_user.image %>">
-<% else %>
-  <%= link_to('Log in with Facebook!', '/auth/facebook') %>
-<% end %>
+
 
 
 
@@ -21,6 +14,15 @@
             <%= button_to 'Login', login_path, :method => :get,  :class => "btn btn-primary btn-lg"%>
             <p> - or - </p>
             <%= button_to 'Signup', signup_path, :method => :get,  :class => "btn btn-primary btn-lg"%>
+            <% end %>
+            <br>
+            <% if current_user %>
+            <h1><%= current_user.name %></h1>
+            <h2>Email: <%= current_user.email %></h2>
+            <h2>Facebook UID: <%= current_user.uid %></h2>
+            <img src="<%= current_user.image %>">
+            <% else %>
+            <%= link_to('Log in with Facebook!', '/auth/facebook') %>
             <% end %>
         </p>
     </div>
