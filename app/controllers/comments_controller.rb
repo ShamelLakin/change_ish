@@ -13,11 +13,11 @@ class CommentsController < ApplicationController
         @comment = @article.comments.build(comment_params)
         @comment.user=current_user
         @comment.save
-       
+        # binding.pry
         #create, link and save the comment
         redirect_to article_path(@article)
         #redirect to the original article object
-        # binding.pry
+       
     end
 
     def destroy 

@@ -5,18 +5,25 @@ class SessionsController < ApplicationController
     end 
 
     def create 
-        @user = User.find_by(:email => params[:email])
-        if @user&.authenticate(params[:password])
+       if auth != nil
+        # binding.pry
+            @user = User.find_or_create_by(uid: auth['uid']) do |u|
+                u.name = auth['info']['name']
+                u.email = auth['info']['email']
+                u.image = auth['info']['image']
+                u.password = SecureRandom.hex
+            end
             session[:user_id] = @user.id
-            redirect_to '/'
+            redirect_to root_path
         else
-            render "/login"
+            @user = User.find_by(:email => params[:email])
+           if @user && @user.authenticate(params[:password])
+                session[:user_id] = @user.id
+                redirect_to '/'
+            else
+                render "new"
+            end
         end 
-        # @user = User.find_or_create_by(uid: auth['uid']) do |u|
-        #     u.name = auth['info']['name']
-        #     u.email = auth['info']['email']
-        #     u.image = auth['info']['image']
-        #   end
     end 
 
     def destroy
